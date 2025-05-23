@@ -16,6 +16,7 @@
       font-weight: bold;
       font-size: 18px;
       color: white;
+      cursor: pointer;
     }
 
     nav {
@@ -94,7 +95,7 @@
 </head>
 <body>
 
-  <nav><a href="index.html">← Back to Home</a></nav>
+  <nav><a onclick="goBack()">← Back to Previous Page</a></nav>
 
   <h1>Welcome to the Shop</h1>
 
@@ -155,6 +156,10 @@
       li.textContent = `${name} - ₹${price}`;
       cartItems.appendChild(li);
       cartTotal.textContent = 'Total Price: ₹' + total;
+    }
+
+    function goBack() {
+      window.history.back();
     }
   </script>
 
