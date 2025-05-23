@@ -1,223 +1,163 @@
-/* General Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: 'Segoe UI', sans-serif;
-    background-color: #f4f7fa;
-    color: #333;
-    line-height: 1.6;
-}
-
-.container {
-    max-width: 1100px;
-    margin: auto;
-    padding: 20px;
-}
-
-/* Navbar */
-.navbar {
-    background-color: #005f73;
-    padding: 10px 0;
-}
-
-.navbar ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    flex-wrap: wrap;
-}
-
-.navbar li {
-    margin: 0 15px;
-}
-
-.navbar a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s;
-}
-
-.navbar a:hover {
-    color: #ffdd57;
-}
-
-/* Hero Section */
-.hero {
-    background: #0a9396;
-    color: white;
-    padding: 40px 20px;
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.hero h1 {
-    margin-bottom: 10px;
-}
-
-.intro-text {
-    margin-bottom: 20px;
-    font-style: italic;
-}
-
-/* Section and Boxes */
-.section {
-    margin-bottom: 30px;
-}
-
-.box {
-    background-color: white;
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-/* Media Layout */
-.media {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-}
-
-.profile-photo {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid #0a9396;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-/* Form Styling */
-form {
-    max-width: 600px;
-    margin: auto;
-}
-
-textarea {
-    width: 100%;
-    padding: 10px;
-    resize: vertical;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
-}
-
-label {
-    font-weight: bold;
-}
-
-button {
-    background-color: #005f73;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    margin-top: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-button:hover {
-    background-color: #0a9396;
-}
-
-.map-frame {
-    width: 100%;
-    height: 250px;
-    border: none;
-    border-radius: 10px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-
-/* Footer */
-.footer {
-    background-color: #52292e;
-    color: white;
-    text-align: center;
-    padding: 25px 10px;
-    margin-top: 40px;
-    border-top: 4px solid #0a9396;
-}
-
-.footer a {
-    color: #ffdd57;
-    text-decoration: none;
-}
-
-.footer a:hover {
-    text-decoration: underline;
-}
-
-/* Thank You Message */
-.thank-you {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #0a9396;
-    text-align: center;
-    margin-top: 30px;
-}
-
-/* Optional: Dark Mode Support */
-@media (prefers-color-scheme: dark) {
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Shop - Keshav's Store</title>
+  <style>
     body {
-        background-color: #121212;
-        color: #e0e0e0;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: black;
+      color: white;
     }
 
-    .box,
-    textarea {
-        background-color: #1e1e1e;
-        color: #e0e0e0;
+    nav a {
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 18px;
+      color: white;
     }
 
-    .navbar,
+    nav {
+      margin-bottom: 20px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .product {
+      border: 1px solid #555;
+      padding: 10px;
+      text-align: center;
+      border-radius: 10px;
+      background-color: #111;
+      color: white;
+      box-shadow: 0 0 10px #222;
+      transition: transform 0.2s ease;
+    }
+
+    .product:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px #fff;
+    }
+
+    .product img {
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+      margin-bottom: 10px;
+    }
+
+    #cart-section {
+      margin-top: 30px;
+      border-top: 2px solid white;
+      padding-top: 20px;
+    }
+
+    #cart-items {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0;
+      color: white;
+    }
+
+    .cart-title {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    #cart-total {
+      font-weight: bold;
+      font-size: 18px;
+      color: white;
+    }
+
     button {
-        background-color: #333;
+      background-color: #444;
+      border: none;
+      padding: 8px 15px;
+      color: white;
+      cursor: pointer;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
     }
 
-    .footer {
-        background-color: #1f1f1f;
-        border-top-color: #0a9396;
+    button:hover {
+      background-color: #666;
     }
-}
+  </style>
+</head>
+<body>
 
-/* Fade-in animation */
-.fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 1s ease, transform 1s ease;
-}
+  <!-- Back Button (HTML link) -->
+  <nav><a href="index.html">← Back to Home</a></nav>
 
-.fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
+  <h1>Welcome to the Shop</h1>
 
-/* Product Layout */
-.product-container {
-    display: flex;
-    gap: 20px; /* space between products */
-    flex-wrap: wrap; /* allows wrapping on smaller screens */
-    justify-content: center; /* center align */
-}
+  <div class="product-grid" id="productGrid"></div>
 
-.product {
-    border: 1px solid #ccc;
-    padding: 10px;
-    width: 200px;
-    text-align: center;
-    border-radius: 8px;
-    box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
-}
+  <div id="cart-section">
+    <div class="cart-title">🛒 Items in Cart:</div>
+    <ul id="cart-items"></ul>
+    <div id="cart-total">Total Price: ₹0</div>
+  </div>
 
+  <script>
+    const products = [
+      { name: 'free style T-Shirt', price: 499, img: 'tshirt.webp' },
+      { name: 'Premium panda Sticker', price: 199, img: 'Panda-Sticker-510x510.webp' },
+      { name: 'Shoes', price: 799, img: 'shoes.webp' },
+      { name: 'Sunglasses', price: 299, img: 'glasses.avif' },
+      { name: 'Backpack', price: 999, img: 'backpack.webp' },
+      { name: 'Watch', price: 699, img: 'watch.webp' },
+      { name: 'Cap', price: 149, img: 'cap.jpg' },
+      { name: 'Notebook', price: 79, img: 'notebook.jpg' },
+      { name: 'Headphones', price: 1299, img: 'headphones.jpg' },
+      { name: 'Pen Pack', price: 59, img: 'pen pack.jpg' },
+      { name: 'Mouse', price: 349, img: 'mouse.webp' },
+      { name: 'Keyboard', price: 499, img: 'keyboard.jpg' },
+      { name: 'Bottle', price: 249, img: 'bottle.jpg' },
+      { name: 'Mobile Cover', price: 199, img: 'cover.jpg' },
+      { name: 'Power Bank', price: 1099, img: 'powerbank.jpg' },
+      { name: 'Torch', price: 159, img: 'tourch.jpg' },
+      { name: 'Slippers', price: 399, img: 'slippers.jpg' },
+      { name: 'Hair Oil', price: 99, img: 'hair oil.webp' },
+      { name: 'Toothpaste', price: 69, img: 'toothpaste.webp' },
+      { name: 'Face Wash', price: 179, img: 'facewash.webp' }
+    ];
+
+    let total = 0;
+    const productGrid = document.getElementById('productGrid');
+    const cartItems = document.getElementById('cart-items');
+    const cartTotal = document.getElementById('cart-total');
+
+    products.forEach(product => {
+      const div = document.createElement('div');
+      div.className = 'product';
+
+      div.innerHTML = `
+        <img src="${product.img}" alt="${product.name}">
+        <p><strong>${product.name}</strong></p>
+        <p>Price: ₹${product.price}</p>
+        <button onclick="addToCart('${product.name}', ${product.price})">Add to Cart</button>
+      `;
+
+      productGrid.appendChild(div);
+    });
+
+    function addToCart(name, price) {
+      total += price;
+      const li = document.createElement('li');
+      li.textContent = `${name} - ₹${price}`;
+      cartItems.appendChild(li);
+      cartTotal.textContent = 'Total Price: ₹' + total;
+    }
+  </script>
+
+</body> 
+</html>
