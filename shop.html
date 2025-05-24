@@ -218,7 +218,7 @@
     total += price;
     cartCount++;
     const li = document.createElement('li');
-    li.innerHTML = ${name} - ₹${price} <button class="remove-btn" onclick="removeFromCart(this, ${price})">Remove</button>;
+    li.innerHTML = `${name} - ₹${price} <button class="remove-btn" onclick="removeFromCart(this, ${price})">Remove</button>`;
     cartItems.appendChild(li);
     updateCartDisplay();
   }
